@@ -1,14 +1,14 @@
 public class Account {
     Long id;
-    Integer balance;   // nullable — NPE risk in add/reduce
-    String status;     // no enum; "CLOSED" is a magic string
+    Integer balance;
+    String status;
 
     public void addBalance(int amount) {
         balance = balance + amount;
     }
 
     public void reduceBalance(int amount) {
-        balance = balance - amount;   // no overdraft guard
+        balance = balance - amount;
     }
-    // no version / updatedAt — optimistic locking impossible
+
 }
